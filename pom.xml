@@ -3,14 +3,40 @@
   <groupId>com.Vcentry</groupId>
   <artifactId>GitTest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <build> 
+   <plugins>
+ 
+     <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.20.1</version>
+    <configuration>
+        <forkMode>always</forkMode>
+        <systemPropertyVariables>
+            <reporter.debug>false</reporter.debug>                     
+        </systemPropertyVariables>
+        <suiteXmlFiles>
+            <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+            
+        </suiteXmlFiles>
+    </configuration>
+            
+</plugin>
+</plugins>
+</build>
   
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>2.53.0</version>
+    <version>2.53.1</version>
 </dependency>
-  
+  <dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>6.10</version>
+    <scope>test</scope>
+</dependency>
   </dependencies>
 </project>
